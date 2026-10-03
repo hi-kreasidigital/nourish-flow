@@ -177,13 +177,13 @@ function pic(p, alt, { sizes = '(min-width: 900px) 33vw, 100vw', eager = false }
 }
 const price = (x) => (x.price ? `<p class="price">${x.priceNote && /from/i.test(x.priceNote) ? esc(x.priceNote) + ' ' : ''}${idr(x.price)}${x.priceNote && !/from/i.test(x.priceNote) ? ` <span>/ ${esc(x.priceNote.replace(/^per\s+/i, ''))}</span>` : ''}</p>` : x.priceNote ? `<p class="price"><span>${esc(x.priceNote)}</span></p>` : '');
 
-const serviceCard = (x) => `<article class="card">
+const serviceCard = (x, primary = false) => `<article class="card">
   <a class="card-img" href="${svcUrl(x)}" tabindex="-1" aria-hidden="true">${pic(x.image, x.name)}</a>
   <div class="card-body">
     <h3><a href="${svcUrl(x)}">${esc(x.name)}</a></h3>
     <p>${esc(x.shortDescription)}</p>
     ${price(x)}
-    ${btn(cta(x, 'Book now', x.name), 'btn-ghost')}
+    ${btn(cta(x, 'Book now', x.name), primary ? 'btn-primary' : 'btn-ghost')}
   </div></article>`;
 
 const eventCard = (x) => `<article class="card card-event">
@@ -269,7 +269,7 @@ ${schema.map(jsonLd).join('\n')}
     <nav class="foot-nav" aria-label="Footer">${NAV.slice(1).map(([l, h]) => `<a href="${h}">${esc(l)}</a>`).join('')}</nav>
     <div class="foot-soc">${socials.map(([l, k]) => `<a href="${esc(s(k))}" target="_blank" rel="noopener me">${l}</a>`).join('')}</div>
   </div>
-  <div class="foot-base"><span>© ${new Date().getFullYear()} ${esc(s('siteName'))}. ${esc(s('credit'))}</span><span>${esc(s('footerTag'))}</span></div>
+  <div class="foot-base"><span>© ${new Date().getFullYear()} ${esc(s('siteName'))}</span>${s('creditUrl') ? `<a class="foot-credit" href="${esc(s('creditUrl'))}" target="_blank" rel="noopener">${esc(s('credit'))}</a>` : `<span class="foot-credit">${esc(s('credit'))}</span>`}<span class="foot-tag">${esc(s('footerTag'))}</span></div>
 </div></footer>
 ${waNumber ? `<a class="wa-float" href="${wa()}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M16 3C9 3 3.4 8.6 3.4 15.5c0 2.4.7 4.7 1.9 6.600L3.200 29l7.100-2.100a12.600 12.600 0 0 0 5.700 1.400c6.900 0 12.600-5.600 12.600-12.500S22.900 3 16 3Zm0 22.700c-1.800 0-3.600-.5-5.100-1.400l-.4-.2-4.200 1.200 1.300-4.100-.3-.4a10.300 10.300 0 0 1-1.600-5.400C5.700 9.800 10.300 5.300 16 5.300s10.300 4.500 10.300 10.200S21.700 25.700 16 25.700Zm5.700-7.600c-.3-.2-1.800-.9-2.100-1-.3-.1-.5-.2-.7.200-.2.300-.8 1-1 1.200-.2.200-.4.200-.7.100-.3-.2-1.300-.5-2.500-1.500-.9-.8-1.500-1.800-1.700-2.100-.2-.3 0-.5.100-.6l.5-.5c.1-.2.200-.3.300-.5.100-.2 0-.4 0-.5l-1-2.300c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.100-.8.400-.3.300-1.100 1.100-1.100 2.600s1.100 3 1.300 3.200c.2.200 2.200 3.400 5.400 4.700.8.300 1.400.5 1.800.6.800.2 1.400.2 2 .1.600-.1 1.800-.7 2-1.400.3-.7.300-1.300.2-1.400-.1-.1-.3-.2-.6-.4Z"/></svg></a>` : ''}
 <script src="/assets/main.js" defer></script>
@@ -295,8 +295,8 @@ const addPage = (pathname, html) => pages.push({ pathname, html });
 <section class="split"><div class="split-text"><h2 class="display">${esc(s('pleasureTitle'))}</h2><p>${esc(s('pleasureText'))}</p></div>
   <div class="split-img">${pic(S.pleasureImage, s('pleasureImageAlt'), { sizes: '(min-width: 900px) 50vw, 100vw' })}</div></section>
 <section class="section"><div class="wrap"><h2 class="display">${esc(s('offeringsTitle'))}</h2><p class="lead-left">${esc(s('offeringsIntro'))}</p>
-  <div class="grid grid-3">${offer.map(serviceCard).join('')}</div></div></section>
-<section class="section alt" id="events"><div class="wrap"><h2 class="display">${esc(s('eventsTitle'))}</h2>
+  <div class="grid grid-3">${offer.map((x) => serviceCard(x)).join('')}</div></div></section>
+<section class="section blue" id="events"><div class="wrap"><h2 class="display">${esc(s('eventsTitle'))}</h2>
   ${evs.length ? `<div class="grid grid-2">${evs.map(eventCard).join('')}</div>` : `<p>${esc(s('eventsEmpty'))}</p>`}</div></section>
 <section class="band-navy"><div class="wrap center"><h2 class="display">${esc(s('bandTitle'))}</h2><p class="upper">${esc(s('bandText'))}</p><a class="btn btn-primary" href="${esc(s('ctaUrl') || '/book-and-shop/')}">${esc(s('ctaLabel'))}</a></div></section>
 ${gallery.length ? `<section class="mosaic">${gallery.slice(0, 6).map((g) => `<figure>${pic(g.image, g.caption || 'Nourish & Flow Bali', { sizes: '(min-width: 900px) 33vw, 50vw' })}</figure>`).join('')}</section>` : ''}
@@ -331,7 +331,7 @@ for (const [cat, list] of [['body', bodyServices], ['plate', plateServices]]) {
   const p = `/for-your-${cat}/`;
   const body = `
 <section class="page-head"><div class="wrap"><h1 class="display">${esc(s(cat + 'Title'))}</h1><p class="kicker">${esc(s(cat + 'Byline'))}</p><p class="lead-left">${esc(s(cat + 'Intro'))}</p></div></section>
-<section class="section"><div class="wrap"><div class="grid grid-3">${list.map(serviceCard).join('')}</div></div></section>`;
+<section class="section"><div class="wrap"><div class="grid grid-3">${list.map((x) => serviceCard(x, true)).join('')}</div></div></section>`;
   addPage(p, layout({
     title: s(cat === 'body' ? 'seoBodyTitle' : 'seoPlateTitle'), description: s(cat === 'body' ? 'seoBodyDescription' : 'seoPlateDescription'), pathname: p, body,
     image: list[0]?.image,
@@ -350,7 +350,7 @@ for (const [cat, list] of [['body', bodyServices], ['plate', plateServices]]) {
   <div><div class="prose big">${md(x.description)}</div>
     <ul class="facts">${x.instructor ? `<li><strong>With</strong> ${esc(x.instructor)}</li>` : ''}${x.level ? `<li><strong>Level</strong> ${esc(x.level)}</li>` : ''}${x.duration ? `<li><strong>Duration</strong> ${esc(x.duration)}</li>` : ''}</ul>
     ${price(x)}${btn(c, 'btn-primary')}</div></div></section>
-${related.length ? `<section class="section alt"><div class="wrap"><h2 class="display small">More ${cat === 'body' ? 'for your body' : 'for your plate'}</h2><div class="grid grid-3">${related.map(serviceCard).join('')}</div></div></section>` : ''}`;
+${related.length ? `<section class="section alt"><div class="wrap"><h2 class="display small">More ${cat === 'body' ? 'for your body' : 'for your plate'}</h2><div class="grid grid-3">${related.map((x) => serviceCard(x)).join('')}</div></div></section>` : ''}`;
     const offer = x.price ? { offers: { '@type': 'Offer', price: x.price, priceCurrency: 'IDR', availability: 'https://schema.org/InStock', url: SITE + svcUrl(x) } } : {};
     addPage(svcUrl(x), layout({
       title: x.seoTitle || `${x.name} in Bali | ${s('siteName')}`, description: x.seoDescription || plain(x.shortDescription), pathname: svcUrl(x), body: dBody, image: x.image,
