@@ -3,7 +3,7 @@
 Website statis (cepat, SEO-friendly) dengan konten yang dikelola lewat **Airtable**, di-host di **GitHub Pages** dengan **domain sendiri**. Tidak ada server, tidak ada layanan lain.
 
 ```
-Airtable (edit konten) ──► GitHub Actions (build) ──► GitHub Pages ──► nourishflowbali.com
+Airtable (edit konten) ──► GitHub Actions (build) ──► GitHub Pages ──► https://hi-kreasidigital.github.io/nourish-flow
 ```
 
 Setiap kali konten Airtable berubah, website dibangun ulang otomatis (±1–2 menit). Tanpa menu Blog.
