@@ -1,0 +1,252 @@
+{
+  "settings": {
+    "siteName": "Nourish & Flow",
+    "siteUrl": "https://nourishflowbali.com",
+    "tagline": "Strong bodies. Nourished souls. Zero guilt.",
+    "metaDescription": "Nourish & Flow Bali: pole dance and Pilates classes, vegan weekly meal plans, cooking workshops and fire-energy events in Bali. Strong bodies. Nourished souls. Zero guilt.",
+    "whatsappNumber": "",
+    "whatsappMessage": "Hi Nourish & Flow! I'd like to know more.",
+    "email": "info@nourishflowbali.com",
+    "street": "",
+    "city": "Denpasar",
+    "region": "Bali",
+    "country": "ID",
+    "instagramUrl": "",
+    "facebookUrl": "",
+    "youtubeUrl": "",
+    "tiktokUrl": "",
+    "bookingFormUrl": "",
+    "contactFormUrl": "",
+    "mapEmbedUrl": "",
+    "credit": "Powered by Kreasi Digital",
+    "footerTag": "Movement & body pleasure brand",
+
+    "seoHomeTitle": "Pole Dance, Pilates & Vegan Meals in Bali | Nourish & Flow",
+    "seoAboutTitle": "Our Philosophy: Nasya & Citra | Nourish & Flow Bali",
+    "seoBodyTitle": "Pole Dance & Pilates Classes in Bali | Nourish & Flow",
+    "seoPlateTitle": "Vegan Meal Plans & Cooking Workshops in Bali | Nourish & Flow",
+    "seoShopTitle": "Book Classes & Shop | Nourish & Flow Bali",
+    "seoConnectTitle": "Contact & Find Us in Bali | Nourish & Flow",
+    "seoBodyDescription": "Beginner-friendly pole dance classes, Pilates sessions and pole performance bookings in Bali with Nasya. No experience or perfect body type needed.",
+    "seoPlateDescription": "Personalised weekly vegan and fitness meal plans, downloadable recipes and nutrition cooking workshops in Bali with nutritionist chef Citra.",
+    "seoAboutDescription": "Meet Nasya and Citra, the two women behind Nourish & Flow Bali: movement, plant-based nourishment and body confidence without guilt.",
+    "seoShopDescription": "Book pole dance, Pilates and workshops, or order meal plans and products from Nourish & Flow Bali via WhatsApp or secure payment links.",
+    "seoConnectDescription": "Questions, bookings or custom offerings? Contact Nourish & Flow Bali by WhatsApp, email or Instagram. We reply within 24 to 48 hours.",
+
+    "heroEyebrow": "Welcome to Nourish & Flow Bali",
+    "heroTitle": "Strong bodies. Nourished souls. Zero guilt.",
+    "heroText": "A high-energy sanctuary of movement, music, and vegan mastery. Fuel your fire, express your essence, and flow without limits in the heart of Bali.",
+    "heroCtaLabel": "Join the flow",
+    "heroCtaUrl": "/book-and-shop/",
+    "heroCta2Label": "Our workshops",
+    "heroCta2Url": "/for-your-plate/nutrition-cooking-workshops/",
+    "heroImage": "",
+    "heroImageAlt": "Women moving together at sunset in Bali",
+
+    "pleasureTitle": "Pleasure as power",
+    "pleasureText": "Strong bodies. Nourished souls. Zero guilt. At Nourish & Flow Bali, we blend the fire of movement with the soul of vegan nourishment. From the pole to the plate, we celebrate every curve and every breath as fuel for your vibration and unapologetic body confidence.",
+    "pleasureImage": "",
+    "pleasureImageAlt": "Pilates session in a bright Bali studio",
+
+    "offeringsTitle": "The offerings",
+    "offeringsIntro": "Explore our diverse movement and culinary experiences designed to ignite your fire energy.",
+    "eventsTitle": "Upcoming energy",
+    "eventsEmpty": "New events are coming soon. Follow us or message us to hear first.",
+
+    "bandTitle": "Fire energy & sensual movement",
+    "bandText": "Untamed bodies. Nourished souls. The Bali flow.",
+    "marquee": "Join the flow • Pole dance • Vegan cooking • Pilates • Bali vibes • Stoke the fire",
+    "reelsTitle": "Watch the flow",
+
+    "ctaTitle": "Embody the pleasure. Nourish the flow.",
+    "ctaLabel": "Join the mission",
+    "ctaUrl": "/book-and-shop/",
+
+    "aboutTitle": "Our philosophy",
+    "aboutText": "Nourish & Flow was born from a simple but powerful idea: that wellness isn't a destination, it's a daily practice. It lives in the way your body moves, the food you prepare with care, and the choices you make for yourself every single day.\n\nWe are Nasya and Citra: two women, two disciplines, one shared vision. Together, we created a space where strength meets softness, and where nourishment isn't just about what's on your plate, but how fully you inhabit your life.",
+    "aboutQuote": "We don't just teach wellness. We live it, and we want you to live it too.",
+    "aboutWhyTitle": "Why Nourish & Flow?",
+    "aboutWhyText": "We don't believe in punishing routines or restrictive diets. We believe in movement that feels liberating, food that feels joyful, and a wellness journey that's entirely, unapologetically yours. Queer-friendly, body-positive and made for women travelers and locals alike. Based in Bali, we weave the island's spirit of balance into everything we do.",
+
+    "bodyTitle": "For your body",
+    "bodyByline": "With Nasya, pole dance artist & Pilates instructor",
+    "bodyIntro": "Movement is medicine. Whether you come for the pole, the mat, or the stage, every session with Nasya is designed to help you feel stronger, freer, and more at home in your own skin.",
+    "plateTitle": "For your plate",
+    "plateByline": "With Citra, nutritionist chef",
+    "plateIntro": "Good food doesn't have to be complicated, but it does have to be intentional. Citra's offerings are designed for people who want to eat well without obsessing over every bite, and feel the difference that real, thoughtful nutrition makes.",
+
+    "shopTitle": "Book & shop",
+    "shopIntro": "Book a class, reserve a workshop, or order from our kitchen. Everything goes through WhatsApp or secure payment links: quick and personal.",
+    "bookingTitle": "Book a session",
+    "bookingFormTitle": "Booking request form",
+    "shopProductsTitle": "Shop",
+    "shopEmpty": "Products are on their way. Message us to pre-order.",
+
+    "connectTitle": "Let's connect",
+    "connectIntro": "Whether you have a question, want to discuss a custom offering, or are simply ready to begin, we'd love to hear from you. Nourish & Flow is based in Bali, and we welcome enquiries from all over the world.",
+    "connectQuote": "Your wellness journey starts with one step, or one meal. We're here for both.",
+    "connectResponse": "We aim to respond to all enquiries within 24 to 48 hours.",
+    "findUsText": "Nourish & Flow is based in Bali, Indonesia. In-person classes, meal deliveries, and workshops are available locally. Online recipe downloads and virtual consultations are available worldwide."
+  },
+
+  "services": [
+    {
+      "name": "Pole Dance Classes",
+      "slug": "pole-dance-classes",
+      "category": "Body",
+      "order": 1,
+      "featured": true,
+      "published": true,
+      "shortDescription": "This isn't a showgirl class, it's a strength class. Build real strength and confidence on the pole.",
+      "description": "This isn't a showgirl class: it's a strength class. Nasya's pole dance sessions are built around the philosophy of empowerment: learning to trust your body, build genuine physical strength, and move with confidence you carry long after you leave the studio.\n\nOpen to complete beginners through to advanced students. No experience, no perfect body type, no prerequisites. Just you and your willingness to try something transformative.",
+      "price": 250000,
+      "priceNote": "per class",
+      "level": "Beginner to advanced",
+      "instructor": "Nasya",
+      "ctaLabel": "Book a Pole Dance Class",
+      "ctaType": "WhatsApp",
+      "seoTitle": "Pole Dance Classes in Bali for Beginners | Nourish & Flow",
+      "seoDescription": "Beginner-friendly pole dance classes in Bali with Nasya. A strength-first, judgment-free class for every body. Book your spot."
+    },
+    {
+      "name": "Pole Dance Performance",
+      "slug": "pole-dance-performance",
+      "category": "Body",
+      "order": 2,
+      "published": true,
+      "shortDescription": "Breathtaking, artistic pole performance for events, brand activations and retreats.",
+      "description": "Looking for a breathtaking, artistic performance for your event? Nasya brings elegance, athleticism, and storytelling to every stage.\n\nAvailable for private events, brand activations, wellness retreats, private villa events and more.",
+      "price": 1000000,
+      "priceNote": "starting from",
+      "level": "Events & private bookings",
+      "instructor": "Nasya",
+      "ctaLabel": "Enquire About a Performance",
+      "ctaType": "WhatsApp",
+      "seoTitle": "Book a Pole Dance Performance in Bali | Nourish & Flow",
+      "seoDescription": "Book a pole dance performance in Bali for private villa events, brand activations and wellness retreats with artist Nasya."
+    },
+    {
+      "name": "Pilates Classes",
+      "slug": "pilates-classes",
+      "category": "Body",
+      "order": 3,
+      "featured": true,
+      "published": true,
+      "shortDescription": "Alignment, controlled movement and breath. A strong foundation from your core outward.",
+      "description": "Pilates with Nasya is about building a strong, stable foundation, from your core outward. Sessions focus on alignment, controlled movement, and breath, making it the perfect complement to any active lifestyle or recovery routine.\n\nSuitable for all levels. Available as private sessions or small group classes in Bali.",
+      "price": 250000,
+      "priceNote": "per session",
+      "level": "All levels",
+      "instructor": "Nasya",
+      "ctaLabel": "Book a Pilates Session",
+      "ctaType": "WhatsApp",
+      "seoTitle": "Pilates Classes in Bali: Private & Small Group | Nourish & Flow",
+      "seoDescription": "Pilates in Bali for balance, core strength and recovery. Private sessions and small group classes for all levels with Nasya."
+    },
+    {
+      "name": "Weekly Meal Plans",
+      "slug": "weekly-meal-plans",
+      "category": "Plate",
+      "order": 4,
+      "published": true,
+      "shortDescription": "Personalised vegan and fitness meal plans, delivered fresh in Bali every week.",
+      "description": "Crafted for gym goers, fitness enthusiasts, and vegans alike, Citra's weekly meal plans take the guesswork out of eating well. Each plan is designed to fuel your training, support your recovery, and taste genuinely good, because healthy food should never be something you tolerate.\n\nPlans are personalised based on your dietary needs, fitness goals, and food preferences. Delivered fresh in Bali on a weekly basis.",
+      "priceNote": "Custom quote",
+      "level": "Delivered weekly in Bali",
+      "instructor": "Citra",
+      "ctaLabel": "Order Your Weekly Meal Plan",
+      "ctaType": "WhatsApp",
+      "seoTitle": "Weekly Vegan & Fitness Meal Plans in Bali | Nourish & Flow",
+      "seoDescription": "Personalised weekly meal plans for gym goers and vegans, made by nutritionist chef Citra and delivered fresh in Bali."
+    },
+    {
+      "name": "Nutritional Recipes",
+      "slug": "nutritional-recipes",
+      "category": "Plate",
+      "order": 5,
+      "published": true,
+      "shortDescription": "Downloadable recipe collections with full nutritional breakdowns. Citra's kitchen, wherever you are.",
+      "description": "Can't make it to Bali? Bring Citra's kitchen to yours. Her downloadable recipe collections are packed with nutrient-dense, flavour-forward meals that work for busy schedules, high-performance lifestyles, and plant-based living.\n\nEach recipe comes with full nutritional breakdowns, easy-to-source ingredients, and prep tips so you can eat like a nutritionist without the guesswork.",
+      "priceNote": "Digital download",
+      "level": "Available worldwide",
+      "instructor": "Citra",
+      "ctaLabel": "Browse & Download Recipes",
+      "ctaType": "WhatsApp",
+      "seoTitle": "Downloadable Plant-Based Nutrition Recipes | Nourish & Flow",
+      "seoDescription": "Download nutrient-dense, plant-based recipe collections with full nutritional breakdowns from nutritionist chef Citra."
+    },
+    {
+      "name": "Nutrition & Cooking Workshops",
+      "slug": "nutrition-cooking-workshops",
+      "category": "Plate",
+      "order": 6,
+      "featured": true,
+      "published": true,
+      "shortDescription": "Vegan cooking plus nutrition basics with an anti-diet approach. Learn how food works for your body.",
+      "description": "More than just cooking: Citra's workshops are an education in how food works for your body. Learn how to build balanced, high-performance meals, understand macros without the obsession, and walk away with the knowledge and recipes to transform the way you eat.\n\nHeld in Bali in intimate group settings. Perfect for wellness seekers, fitness lovers, and anyone ready to take their relationship with food to the next level.",
+      "priceNote": "Ask for dates and pricing",
+      "level": "Small groups in Bali",
+      "instructor": "Citra",
+      "ctaLabel": "Book a Workshop",
+      "ctaType": "WhatsApp",
+      "seoTitle": "Vegan Cooking & Nutrition Workshops in Bali | Nourish & Flow",
+      "seoDescription": "Hands-on vegan cooking and anti-diet nutrition workshops in Bali with nutritionist chef Citra. Small groups, real skills."
+    }
+  ],
+
+  "events": [
+    {
+      "title": "Fire Flow Showcase",
+      "type": "Performance",
+      "description": "Experience the intersection of fire, strength, and sensual artistry. A bold showcase of Bali's movement elite that redefines the limits of the body.",
+      "ctaLabel": "Book your spot",
+      "published": true,
+      "order": 1
+    },
+    {
+      "title": "Raw Vegan Gala",
+      "type": "Dining",
+      "description": "An immersive multi-sensory dining event featuring vibrant plant-based dishes curated for pleasure and fire energy. Taste meets maximalist aesthetic.",
+      "ctaLabel": "Reserve table",
+      "published": true,
+      "order": 2
+    },
+    {
+      "title": "Sensual Flow Intensive",
+      "type": "Workshop",
+      "description": "Align your flow with fire-energy in this high-vibration Pilates intensive. Focus on body confidence, core power, and pure movement pleasure.",
+      "ctaLabel": "Join workshop",
+      "published": true,
+      "order": 3
+    },
+    {
+      "title": "After Dark Dining",
+      "type": "Dining",
+      "description": "A theatrical dining experience where music and food collide. Expect unexpected flavors, hypnotic movement, and nocturnal fire performances.",
+      "ctaLabel": "Get tickets",
+      "published": true,
+      "order": 4
+    }
+  ],
+
+  "products": [],
+  "reels": [],
+  "gallery": [],
+
+  "team": [
+    {
+      "name": "Nasya",
+      "role": "Movement & Empowerment",
+      "order": 1,
+      "published": true,
+      "bio": "Nasya is a pole dance artist and Pilates instructor who believes that movement is one of the most powerful forms of self-expression. Her approach to pole dance isn't about performance for others: it's about rediscovering your own strength, grace, and confidence from the inside out.\n\nWhether you're stepping onto the pole for the first time or deepening your Pilates practice, Nasya creates a space that is welcoming, empowering, and free from judgment. Every class is an invitation to reconnect with your body on your own terms."
+    },
+    {
+      "name": "Citra",
+      "role": "Nutrition & Nourishment",
+      "order": 2,
+      "published": true,
+      "bio": "Citra is a nutritionist chef who understands that what you eat shapes not just your body, but your energy, your mood, and your entire relationship with food. With expertise in fitness nutrition and plant-based cooking, she crafts meals and recipes that are as satisfying as they are nourishing.\n\nFrom customised weekly meal plans for gym enthusiasts to vibrant vegan menus and hands-on cooking workshops, Citra's philosophy is simple: food should be your greatest ally, not your greatest source of stress."
+    }
+  ]
+}
