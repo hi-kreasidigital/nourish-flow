@@ -213,8 +213,6 @@ const reelsSection = (title = s('reelsTitle')) => {
     `<div class="reel"><blockquote class="instagram-media" data-instgrm-permalink="${esc(r.u)}" data-instgrm-version="14"><a href="${esc(r.u)}">${esc(r.title || 'View on Instagram')}</a></blockquote></div>`).join('')}</div></div></section>`;
 };
 
-const ctaBand = () => `<section class="section final-cta"><div class="wrap center"><h2 class="display">${esc(s('ctaTitle')).replace(/\.\s+/g, '.<br>')}</h2><a class="btn btn-dark" href="${esc(s('ctaUrl') || '/book-and-shop/')}">${esc(s('ctaLabel'))}</a></div></section>`;
-
 const NAV = [['Home', '/'], ['About', '/about/'], ['For Your Body', '/for-your-body/'], ['For Your Plate', '/for-your-plate/'], ['Book & Shop', '/book-and-shop/'], ['Connect', '/connect/']];
 const socials = [['Instagram', 'instagramUrl'], ['Facebook', 'facebookUrl'], ['YouTube', 'youtubeUrl'], ['TikTok', 'tiktokUrl']].filter(([, k]) => s(k));
 
@@ -248,7 +246,7 @@ function layout({ title, description, pathname, body, image, schema = [], noinde
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${url}">
 ${noindex ? '<meta name="robots" content="noindex">' : '<meta name="robots" content="index, follow, max-image-preview:large">'}
-<meta name="theme-color" content="#FF8F77">
+<meta name="theme-color" content="#253C57">
 <meta property="og:type" content="website"><meta property="og:site_name" content="${esc(s('siteName'))} Bali">
 <meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${url}">
 ${og ? `<meta property="og:image" content="${og}">` : ''}
@@ -266,9 +264,8 @@ ${schema.map(jsonLd).join('\n')}
 </div></header>
 <main id="main">${body}</main>
 <footer class="site-footer"><div class="wrap">
-  <p class="giant">${esc(s('siteName'))} Bali</p>
   <div class="foot-grid">
-    <div><p>${esc(s('email')) ? `<a href="mailto:${esc(s('email'))}">${esc(s('email'))}</a>` : ''}</p><p>${esc([s('street'), s('city'), s('region')].filter(Boolean).join(', '))} | ${esc(s('tagline'))}</p></div>
+    <div><p class="foot-brand">${esc(s('siteName'))} Bali</p><p>${esc(s('email')) ? `<a href="mailto:${esc(s('email'))}">${esc(s('email'))}</a>` : ''}</p><p>${esc([s('street'), s('city'), s('region')].filter(Boolean).join(', '))} | ${esc(s('tagline'))}</p></div>
     <nav class="foot-nav" aria-label="Footer">${NAV.slice(1).map(([l, h]) => `<a href="${h}">${esc(l)}</a>`).join('')}</nav>
     <div class="foot-soc">${socials.map(([l, k]) => `<a href="${esc(s(k))}" target="_blank" rel="noopener me">${l}</a>`).join('')}</div>
   </div>
@@ -293,23 +290,21 @@ const addPage = (pathname, html) => pages.push({ pathname, html });
   <p class="eyebrow">${esc(s('heroEyebrow'))}</p>
   <h1 class="display hero-title">${esc(s('heroTitle')).replace(/\.\s+/g, '.<br>')}</h1>
   <p class="lead">${esc(s('heroText'))}</p>
-  <div class="btn-row">${btn({ href: s('heroCtaUrl') || '/book-and-shop/', label: s('heroCtaLabel') }, 'btn-coral')}${btn({ href: s('heroCta2Url') || '/for-your-plate/', label: s('heroCta2Label') }, 'btn-outline')}</div>
+  <div class="btn-row">${btn({ href: s('heroCtaUrl') || '/for-your-body/', label: s('heroCtaLabel') }, 'btn-primary')}${btn({ href: s('heroCta2Url') || '/for-your-plate/', label: s('heroCta2Label') }, 'btn-outline')}</div>
 </div></section>
-${S.heroImage ? `<div class="band-img">${pic(S.heroImage, s('heroImageAlt'), { sizes: '100vw', eager: true })}</div>` : ''}
 <section class="split"><div class="split-text"><h2 class="display">${esc(s('pleasureTitle'))}</h2><p>${esc(s('pleasureText'))}</p></div>
   <div class="split-img">${pic(S.pleasureImage, s('pleasureImageAlt'), { sizes: '(min-width: 900px) 50vw, 100vw' })}</div></section>
-<section class="section"><div class="wrap"><h2 class="display coral">${esc(s('offeringsTitle'))}</h2><p class="lead-left">${esc(s('offeringsIntro'))}</p>
+<section class="section"><div class="wrap"><h2 class="display">${esc(s('offeringsTitle'))}</h2><p class="lead-left">${esc(s('offeringsIntro'))}</p>
   <div class="grid grid-3">${offer.map(serviceCard).join('')}</div></div></section>
-<section class="section" id="events"><div class="wrap"><h2 class="display coral">${esc(s('eventsTitle'))}</h2>
+<section class="section alt" id="events"><div class="wrap"><h2 class="display">${esc(s('eventsTitle'))}</h2>
   ${evs.length ? `<div class="grid grid-2">${evs.map(eventCard).join('')}</div>` : `<p>${esc(s('eventsEmpty'))}</p>`}</div></section>
-<section class="band-coral"><div class="wrap center"><h2 class="display">${esc(s('bandTitle'))}</h2><p class="upper">${esc(s('bandText'))}</p></div></section>
+<section class="band-navy"><div class="wrap center"><h2 class="display">${esc(s('bandTitle'))}</h2><p class="upper">${esc(s('bandText'))}</p><a class="btn btn-primary" href="${esc(s('ctaUrl') || '/book-and-shop/')}">${esc(s('ctaLabel'))}</a></div></section>
 ${gallery.length ? `<section class="mosaic">${gallery.slice(0, 6).map((g) => `<figure>${pic(g.image, g.caption || 'Nourish & Flow Bali', { sizes: '(min-width: 900px) 33vw, 50vw' })}</figure>`).join('')}</section>` : ''}
 <div class="marquee" aria-hidden="true"><div class="marquee-in">${Array(4).fill(`<span>${esc(s('marquee'))} • </span>`).join('')}</div></div>
-${reelsSection()}
-${ctaBand()}`;
+${reelsSection()}`;
   addPage('/', layout({
     title: s('seoHomeTitle'), description: s('metaDescription'), pathname: '/', body,
-    image: S.heroImage || S.pleasureImage || offer[0]?.image,
+    image: S.pleasureImage || offer[0]?.image,
     schema: [orgSchema(), { '@context': 'https://schema.org', '@type': 'WebSite', name: s('siteName') + ' Bali', url: SITE }],
   }));
 }
@@ -323,8 +318,7 @@ ${ctaBand()}`;
   <div class="card-img">${pic(t.image, t.name)}</div>
   <h2>Meet ${esc(t.name)}</h2><p class="kicker">${esc(t.role)}</p><div class="prose">${md(t.bio)}</div></article>`).join('')}</div></section>
 <section class="section alt"><div class="wrap narrow"><h2 class="display small">${esc(s('aboutWhyTitle'))}</h2><div class="prose">${md(s('aboutWhyText'))}</div>
-  <div class="btn-row">${btn({ href: '/for-your-body/', label: 'For your body' }, 'btn-coral')}${btn({ href: '/for-your-plate/', label: 'For your plate' }, 'btn-outline')}</div></div></section>
-${ctaBand()}`;
+  <div class="btn-row">${btn({ href: '/for-your-body/', label: 'For your body' }, 'btn-primary')}${btn({ href: '/for-your-plate/', label: 'For your plate' }, 'btn-outline')}</div></div></section>`;
   addPage('/about/', layout({
     title: s('seoAboutTitle'), description: s('seoAboutDescription'), pathname: '/about/', body,
     image: team[0]?.image,
@@ -337,8 +331,7 @@ for (const [cat, list] of [['body', bodyServices], ['plate', plateServices]]) {
   const p = `/for-your-${cat}/`;
   const body = `
 <section class="page-head"><div class="wrap"><h1 class="display">${esc(s(cat + 'Title'))}</h1><p class="kicker">${esc(s(cat + 'Byline'))}</p><p class="lead-left">${esc(s(cat + 'Intro'))}</p></div></section>
-<section class="section"><div class="wrap"><div class="grid grid-3">${list.map(serviceCard).join('')}</div></div></section>
-${ctaBand()}`;
+<section class="section"><div class="wrap"><div class="grid grid-3">${list.map(serviceCard).join('')}</div></div></section>`;
   addPage(p, layout({
     title: s(cat === 'body' ? 'seoBodyTitle' : 'seoPlateTitle'), description: s(cat === 'body' ? 'seoBodyDescription' : 'seoPlateDescription'), pathname: p, body,
     image: list[0]?.image,
@@ -356,7 +349,7 @@ ${ctaBand()}`;
   <div class="card-img tall">${pic(x.image, x.name, { sizes: '(min-width: 900px) 50vw, 100vw', eager: true })}</div>
   <div><div class="prose big">${md(x.description)}</div>
     <ul class="facts">${x.instructor ? `<li><strong>With</strong> ${esc(x.instructor)}</li>` : ''}${x.level ? `<li><strong>Level</strong> ${esc(x.level)}</li>` : ''}${x.duration ? `<li><strong>Duration</strong> ${esc(x.duration)}</li>` : ''}</ul>
-    ${price(x)}${btn(c, 'btn-coral')}</div></div></section>
+    ${price(x)}${btn(c, 'btn-primary')}</div></div></section>
 ${related.length ? `<section class="section alt"><div class="wrap"><h2 class="display small">More ${cat === 'body' ? 'for your body' : 'for your plate'}</h2><div class="grid grid-3">${related.map(serviceCard).join('')}</div></div></section>` : ''}`;
     const offer = x.price ? { offers: { '@type': 'Offer', price: x.price, priceCurrency: 'IDR', availability: 'https://schema.org/InStock', url: SITE + svcUrl(x) } } : {};
     addPage(svcUrl(x), layout({
@@ -373,7 +366,7 @@ ${related.length ? `<section class="section alt"><div class="wrap"><h2 class="di
   const body = `
 <section class="page-head"><div class="wrap"><h1 class="display">${esc(s('shopTitle'))}</h1><p class="lead-left">${esc(s('shopIntro'))}</p></div></section>
 <section class="section" id="booking"><div class="wrap"><h2 class="display small">${esc(s('bookingTitle'))}</h2>
-  <ul class="book-list">${services.map((x) => `<li><div><h3><a href="${svcUrl(x)}">${esc(x.name)}</a></h3><p>${esc(x.shortDescription)}</p></div><div class="book-act">${price(x)}${btn(cta(x, 'Book now', x.name), 'btn-coral')}</div></li>`).join('')}</ul>
+  <ul class="book-list">${services.map((x) => `<li><div><h3><a href="${svcUrl(x)}">${esc(x.name)}</a></h3><p>${esc(x.shortDescription)}</p></div><div class="book-act">${price(x)}${btn(cta(x, 'Book now', x.name), 'btn-primary')}</div></li>`).join('')}</ul>
   ${s('bookingFormUrl') ? `<h3 class="form-title">${esc(s('bookingFormTitle'))}</h3><iframe class="embed-form" src="${esc(s('bookingFormUrl'))}" title="${esc(s('bookingFormTitle'))}" loading="lazy"></iframe>` : ''}</div></section>
 <section class="section alt" id="shop"><div class="wrap"><h2 class="display small">${esc(s('shopProductsTitle'))}</h2>
   ${products.length ? `<div class="grid grid-3">${products.map(productCard).join('')}</div>` : `<p>${esc(s('shopEmpty'))}</p>`}</div></section>`;
@@ -392,7 +385,7 @@ ${related.length ? `<section class="section alt"><div class="wrap"><h2 class="di
 <section class="page-head"><div class="wrap"><h1 class="display">${esc(s('connectTitle'))}</h1><p class="lead-left">${esc(s('connectIntro'))}</p><blockquote class="pull">${esc(s('connectQuote'))}</blockquote></div></section>
 <section class="section"><div class="wrap grid grid-2">
   <div><h2 class="display small">Get in touch</h2><p>${esc(s('connectResponse'))}</p>
-    <div class="btn-row">${waNumber ? btn({ href: wa(), label: 'Chat on WhatsApp', external: true }, 'btn-coral') : ''}${s('email') ? btn({ href: 'mailto:' + s('email'), label: 'Send an email' }, 'btn-outline') : ''}</div>
+    <div class="btn-row">${waNumber ? btn({ href: wa(), label: 'Chat on WhatsApp', external: true }, 'btn-primary') : ''}${s('email') ? btn({ href: 'mailto:' + s('email'), label: 'Send an email' }, 'btn-outline') : ''}</div>
     ${socials.length ? `<p class="soc-links">${socials.map(([l, k]) => `<a href="${esc(s(k))}" target="_blank" rel="noopener me">${l}</a>`).join(' · ')}</p>` : ''}
     <h2 class="display small mt">Find us</h2><p>${esc(s('findUsText'))}</p>
     <address>${esc([s('street'), s('city'), s('region')].filter(Boolean).join(', '))}</address></div>
@@ -414,7 +407,7 @@ for (const { pathname, html } of pages) {
 }
 await writeFile(path.join(DIST, '404.html'), rebase(layout({
   title: 'Page not found | ' + s('siteName'), description: 'Page not found', pathname: '/404/', noindex: true,
-  body: `<section class="page-head"><div class="wrap center"><h1 class="display">Lost the flow?</h1><p class="lead">That page doesn't exist. Let's get you back.</p><a class="btn btn-coral" href="/">Back home</a></div></section>`,
+  body: `<section class="page-head"><div class="wrap center"><h1 class="display">Lost the flow?</h1><p class="lead">That page doesn't exist. Let's get you back.</p><a class="btn btn-primary" href="/">Back home</a></div></section>`,
 })));
 await mkdir(path.join(DIST, 'assets'), { recursive: true });
 await cp(path.join(ROOT, 'src'), path.join(DIST, 'assets'), { recursive: true });

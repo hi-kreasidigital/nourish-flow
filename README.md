@@ -39,10 +39,9 @@ Isi satu baris per pengaturan. Nilai default semuanya sudah ada di `data/seed.js
 | `bookingFormUrl` | link embed Airtable Form (lihat bawah) |
 | `contactFormUrl` | link embed Airtable Form kontak |
 | `mapEmbedUrl` | URL embed Google Maps (opsional) |
-| `heroImage` | isi kolom **Image** (upload foto), bukan Value |
 | `pleasureImage` | idem |
 
-Key lain yang bisa diubah: `heroTitle`, `heroText`, `pleasureTitle`, `pleasureText`, `offeringsTitle`, `eventsTitle`, `bandTitle`, `marquee`, `ctaTitle`, `aboutText`, `bodyIntro`, `plateIntro`, `shopIntro`, `connectIntro`, `seo…Title`, `seo…Description`, dll. (lihat daftar lengkap di `data/seed.json`).
+Key lain yang bisa diubah: `heroTitle`, `heroText`, `pleasureTitle`, `pleasureText`, `offeringsTitle`, `eventsTitle`, `bandTitle`, `marquee`, `ctaLabel`, `ctaUrl`, `aboutText`, `bodyIntro`, `plateIntro`, `shopIntro`, `connectIntro`, `seo…Title`, `seo…Description`, dll. (lihat daftar lengkap di `data/seed.json`).
 
 ### Services
 `Name`, `Slug`, `Category` (single select: **Body** / **Plate**), `Short Description`, `Description` (long text; baris kosong = paragraf baru), `Price` (number, IDR), `Price Note` (mis. "per class", "starting from", "Custom quote"), `Level`, `Duration`, `Instructor`, `Image`, `CTA Label`, `CTA Type` (single select: **WhatsApp** / **Link** / **Form**), `CTA URL` (untuk tipe Link, mis. link pembayaran), `SEO Title`, `SEO Description`, `Featured` (tampil di Home, pilih 3), `Order`, `Published`.
@@ -124,7 +123,6 @@ npm run preview
 ```
 
 ## Catatan
-- **Gambar**: unggah foto di Airtable. Build mengunduh, mengubah ke WebP (640/1280/1920px) dan menyimpannya di situs, sehingga link Airtable yang kedaluwarsa tidak jadi masalah. Foto landscape ≥ 1600px, isi alt lewat key `heroImageAlt` / `pleasureImageAlt`.
+- **Gambar**: unggah foto di Airtable. Build mengunduh, mengubah ke WebP (640/1280/1920px) dan menyimpannya di situs, sehingga link Airtable yang kedaluwarsa tidak jadi masalah. Foto landscape ≥ 1600px, isi alt lewat key `pleasureImageAlt`.
 - **Pembayaran & booking**: tanpa server, jadi booking lewat WhatsApp (pesan sudah terisi otomatis) atau Airtable Form; produk lewat WhatsApp atau Payment Link.
-- **Warna brand**: `--coral #FF8F77`, `--ink #0B0B0B`, putih. Ubah di bagian atas `src/styles.css`.
-- Teks coral di atas putih hanya dipakai untuk judul besar (kontras aman untuk teks besar). Tombol memakai teks hitam di atas coral.
+- **Warna brand**: Navy `#253C57`, Baby Blue `#BEE1E6`, Neon Green `#EDFF43`, Light Grey `#E9EAEC` (variabel di bagian atas `src/styles.css`). Neon Green dipakai untuk tombol utama dengan teks Navy supaya kontrasnya aman.
