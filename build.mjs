@@ -130,7 +130,7 @@ const data = await loadData();
 await resolveImages(data);
 const S = data.settings;
 const s = (k) => (typeof S[k] === 'string' ? S[k] : '');
-const SITE = (process.env.SITE_URL || s('siteUrl') || 'https://nourishflowbali.com').replace(/\/$/, '');
+const SITE = (process.env.SITE_URL || s('siteUrl') || 'https://hi-kreasidigital.github.io/nourish-flow').replace(/\/$/, '');
 const HOST = new URL(SITE).host;
 
 const services = data.services.filter((x) => x.published && x.name).map((x) => ({
