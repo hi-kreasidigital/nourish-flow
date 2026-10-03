@@ -78,8 +78,10 @@ Di Airtable buat **Form view** pada tabel baru (mis. `Bookings`, `Enquiries`) �
 3. **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 4. Jalankan workflow **Build & Deploy** (Actions → Run workflow). Website akan online di `https://<user>.github.io/<repo>/` sebelum domain dipasang.
 
-## 4. Domain (nourishflowbali.com)
-Di DNS registrar:
+## 4. Domain
+Sementara situs memakai alamat GitHub Pages `https://hi-kreasidigital.github.io/nourish-flow` (key `siteUrl` di Settings Airtable, tanpa file `CNAME`). Semua link internal otomatis diberi awalan `/nourish-flow/`.
+
+Saat domain sendiri sudah siap (mis. `nourishflowbali.com`), ganti `siteUrl` di Settings Airtable menjadi `https://nourishflowbali.com`, lalu atur DNS di registrar:
 
 | Type | Host | Value |
 |---|---|---|
@@ -89,7 +91,7 @@ Di DNS registrar:
 | A | `@` | `185.199.111.153` |
 | CNAME | `www` | `<user>.github.io` |
 
-Lalu **Settings → Pages → Custom domain** → isi domain → centang **Enforce HTTPS** (tunggu sertifikat ±15 menit). File `CNAME` sudah dibuat otomatis oleh build dari `siteUrl`. Jika domain bukan `nourishflowbali.com`, ubah key `siteUrl` di Settings (atau variabel `SITE_URL`).
+Lalu **Settings → Pages → Custom domain** → isi domain → centang **Enforce HTTPS** (tunggu sertifikat ±15 menit). File `CNAME` dibuat otomatis oleh build dari `siteUrl` begitu alamatnya bukan `*.github.io`. Untuk domain lain, cukup ubah key `siteUrl` di Settings (atau variabel `SITE_URL`).
 
 ## 5. Rebuild otomatis saat Airtable berubah
 Workflow juga jalan setiap 6 jam sebagai cadangan. Untuk update instan:

@@ -130,8 +130,15 @@ const data = await loadData();
 await resolveImages(data);
 const S = data.settings;
 const s = (k) => (typeof S[k] === 'string' ? S[k] : '');
-const SITE = (process.env.SITE_URL || s('siteUrl') || 'https://hi-kreasidigital.github.io/nourish-flow').replace(/\/$/, '');
+const SITE = (process.env.SITE_URL || s('siteUrl') || 'https://hi-kreasidigital.github.io/nourish-flow')
+  .trim().replace(/^http:\/\//, 'https://').replace(/\/$/, '');
 const HOST = new URL(SITE).host;
+// GitHub Pages project sites live under a sub-path (e.g. /nourish-flow). Prefix every root-relative
+// link/asset with it. With a custom domain the path is empty and nothing changes.
+const BASE_PATH = new URL(SITE).pathname.replace(/\/$/, '');
+const rebase = (html) => (!BASE_PATH ? html : html
+  .replace(/(href|src)="\/(?!\/)/g, `$1="${BASE_PATH}/`)
+  .replace(/srcset="([^"]*)"/g, (_, v) => `srcset="${v.split(', ').map((c) => (c.startsWith('/') ? BASE_PATH + c : c)).join(', ')}"`));
 
 const services = data.services.filter((x) => x.published && x.name).map((x) => ({
   ...x, slug: x.slug || plain(x.name).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''),
@@ -403,17 +410,18 @@ ${reelsSection()}`;
 for (const { pathname, html } of pages) {
   const dir = path.join(DIST, pathname);
   await mkdir(dir, { recursive: true });
-  await writeFile(path.join(dir, 'index.html'), html);
+  await writeFile(path.join(dir, 'index.html'), rebase(html));
 }
-await writeFile(path.join(DIST, '404.html'), layout({
+await writeFile(path.join(DIST, '404.html'), rebase(layout({
   title: 'Page not found | ' + s('siteName'), description: 'Page not found', pathname: '/404/', noindex: true,
   body: `<section class="page-head"><div class="wrap center"><h1 class="display">Lost the flow?</h1><p class="lead">That page doesn't exist. Let's get you back.</p><a class="btn btn-coral" href="/">Back home</a></div></section>`,
-}));
+})));
 await mkdir(path.join(DIST, 'assets'), { recursive: true });
 await cp(path.join(ROOT, 'src'), path.join(DIST, 'assets'), { recursive: true });
 await writeFile(path.join(DIST, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map((p) => `  <url><loc>${SITE}${p.pathname}</loc><lastmod>${today}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 await writeFile(path.join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
-await writeFile(path.join(DIST, 'CNAME'), HOST + '\n');
+// CNAME only for a custom domain (never for *.github.io)
+if (!HOST.endsWith('github.io')) await writeFile(path.join(DIST, 'CNAME'), HOST + '\n');
 await writeFile(path.join(DIST, '.nojekyll'), '');
 
 if (!waNumber) console.warn('! whatsappNumber is empty: WhatsApp buttons fall back to /connect/');
